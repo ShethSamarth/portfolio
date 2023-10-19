@@ -28,14 +28,12 @@ const Projects = ({ projects }: ProjectsProps) => {
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 sm:p-20 md:p-44 h-screen"
           >
             <Link href={project.link} target="_blank">
-              <motion.img
-                initial={{ y: -300, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.2 }}
-                viewport={{ once: true }}
+              <Image
                 src={urlFor(project.image).url()}
                 alt={project.image.alt}
-                className="h-64 w-72 md:h-64 md:w-auto object-contain hover:scale-105 duration-300 ease-in-out"
+                width={1000}
+                height={1000}
+                className="h-64 w-72 md:h-64 md:w-auto object-contain hover:scale-110 duration-300 ease-in-out"
               />
             </Link>
 
@@ -57,7 +55,7 @@ const Projects = ({ projects }: ProjectsProps) => {
                 ))}
               </div>
 
-              <p className="text-sm sm:text-lg md:text-left text-justify">
+              <p className="text-xs sm:text-md md:text-lg md:text-left text-justify">
                 {project.summary}
               </p>
             </div>
