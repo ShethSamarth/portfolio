@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
+
 import { urlFor } from "@/sanity/lib/urlFor"
 
 interface ProjectsProps {
@@ -15,6 +16,7 @@ const Projects = ({ projects }: ProjectsProps) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
       className="h-[90vh] sm:h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
     >
       <h3 className="absolute top-24 md:top-10 uppercase tracking-[20px] text-gray-500 text-2xl">

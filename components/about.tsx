@@ -33,6 +33,7 @@ const About = ({ pageInfo }: AboutProps) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
       className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
       <h3 className="absolute top-24 md:top-10 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -42,6 +43,7 @@ const About = ({ pageInfo }: AboutProps) => {
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.2 }}
+        viewport={{ once: true }}
         src={urlFor(pageInfo.profilePic).url()}
         className="-mb-20 md:mb-0 flex-shrink-0 w-44 h-44 rounded-full object-cover md:rounded-lg lg:w-96 md:w-72 md:h-96 md:ml-24"
         alt={pageInfo.profilePic.alt}
@@ -51,6 +53,7 @@ const About = ({ pageInfo }: AboutProps) => {
         initial={{ x: 200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.2 }}
+        viewport={{ once: true }}
         className="space-y-2 md:space-y-10 px-0 md:px-10"
       >
         <h4 className="text-2xl md:text-4xl font-semibold">

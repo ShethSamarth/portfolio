@@ -1,14 +1,14 @@
 import Link from "next/link"
 import { groq } from "next-sanity"
-import { client } from "@/sanity/lib/client"
 import { ArrowUpCircleIcon } from "@heroicons/react/24/solid"
 
-import Header from "@/components/header"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Skills from "@/components/skills"
+import Header from "@/components/header"
 import Contact from "@/components/contact"
 import Projects from "@/components/projects"
+import { client } from "@/sanity/lib/client"
 import Experiences from "@/components/experiences"
 
 export const revalidate = 500

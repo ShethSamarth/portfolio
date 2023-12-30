@@ -15,6 +15,7 @@ const Header = ({ socials }: HeaderProps) => {
         initial={{ opacity: 0, scale: 0.5, x: -500 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
         className="flex flex-row items-center"
       >
         {socials.map((social) => (
@@ -33,6 +34,7 @@ const Header = ({ socials }: HeaderProps) => {
         initial={{ opacity: 0, scale: 0.5, x: 500 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
         className="flex flex-row items-center text-gray-300 cursor-pointer space-x-2"
       >
         <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7" />
