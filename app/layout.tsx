@@ -1,8 +1,7 @@
-import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Toaster } from "react-hot-toast"
 
-const inter = Inter({ subsets: ["latin"] })
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Samarth Sheth - Portfolio",
@@ -17,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Toaster />
+        {children}
+      </body>
     </html>
   )
 }

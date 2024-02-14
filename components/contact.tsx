@@ -1,5 +1,7 @@
 "use client"
 
+import axios from "axios"
+import toast from "react-hot-toast"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
 
@@ -15,8 +17,21 @@ const Contact = ({ pageInfo }: ContactProps) => {
   const { register, handleSubmit, reset } = useForm<ContactInputs>()
 
   const onSubmit: SubmitHandler<ContactInputs> = (formData) => {
-    window.location.href = `mailto:${pageInfo.email}?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message}`
-    reset()
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      toast.error("Fill the required fields!")
+      return
+    }
+    toast.promise(axios.post("/api/mail", formData), {
+      loading: "Submitting...",
+      success: <p>Form submitted successfully!</p>,
+      error: <p>Error submitting.</p>,
+    })
+    return reset()
   }
 
   return (
